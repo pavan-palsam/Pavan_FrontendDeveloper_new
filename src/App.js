@@ -1,24 +1,22 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
+import Header from './components/Header/index.tsx'
+import Filters from './components/Filters/index.tsx'
+import FoodItems from './components/FoodItems/index.tsx'
+import Footer from './components/Footer/index.tsx'
+import { FoodItemContext } from './context.tsx';
 
 function App() {
+  const [foodItems, setFoodItems] = useState([])
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <FoodItemContext.Provider value={{foodItems,setFoodItems}}>
+    <div className="App">     
+        <Header />
+        <Filters />
+        <FoodItems />
+        <Footer />
     </div>
+    </FoodItemContext.Provider>
   );
 }
 
