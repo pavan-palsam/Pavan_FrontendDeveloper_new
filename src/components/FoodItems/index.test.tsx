@@ -1,9 +1,6 @@
 import React from 'react';
 import { render, waitFor } from '@testing-library/react';
-import axios from 'axios';
-import FoodItems from './FoodItems/index.tsx';
-
-jest.mock('axios');
+import FoodItems from './index';
 
 const mockFoodItemsData = {
   meals: [
@@ -13,7 +10,6 @@ const mockFoodItemsData = {
 };
 
 test('renders FoodItems component with mock data', async () => {
-
   axios.get.mockResolvedValue({ data: mockFoodItemsData });
 
   const { getByText, getByAltText } = render(<FoodItems />);
@@ -23,7 +19,7 @@ test('renders FoodItems component with mock data', async () => {
     expect(getByAltText('Loading')).not.toBeInTheDocument();
   });
 
-  // Checing if the rendered component contains the expected data
+  // Checking if the rendered component contains the expected data
   expect(getByText('Meal 1')).toBeInTheDocument();
   expect(getByText('Meal 2')).toBeInTheDocument();
 });

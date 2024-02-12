@@ -1,10 +1,7 @@
 import React from 'react';
 import { render, fireEvent, waitFor } from '@testing-library/react';
-import axios from 'axios';
-import Filters from './Filters';
+import Filters from './index.tsx';
 import { useFoodContext } from '../../context.tsx';
-
-jest.mock('axios');
 
 const mockFoodItemsData = {
   meals: [

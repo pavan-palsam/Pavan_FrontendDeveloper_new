@@ -1,9 +1,6 @@
 import React from 'react';
-import axios from 'axios';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
-import Header from './Header/index.tsx';
-
-jest.mock('axios');
+import Header from './index.tsx';
 
 const mockData = {
     meals: [

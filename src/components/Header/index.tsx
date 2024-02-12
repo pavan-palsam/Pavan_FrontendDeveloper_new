@@ -1,10 +1,10 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { SiSwiggy } from "react-icons/si";
+import axios from 'axios'
 import OutlinedInput from '@mui/material/OutlinedInput';
 import { InputAdornment } from '@mui/material';
 import { IoMdSearch } from "react-icons/io";
-import axios from 'axios'
 import { useFoodContext } from '../../context.tsx';
 
 
